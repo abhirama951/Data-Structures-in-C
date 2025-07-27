@@ -3,6 +3,7 @@
 #include "stack_arr.h"
 #include "stack_ll.h"
 #include "queue_array.h"
+#include "queue_list.h"
 
 int main(){
 	/*Implementation of Linked List
@@ -19,7 +20,7 @@ int main(){
 	insert_ll(&head, 1, 1);
 	print_ll(head);
 	printf("Deleting value at index 3\r\n");
-	delete_ll(&head, 3);
+	delete_ll(&head, 0);
 	print_ll(head);
 	freeLL(&head);*/
 
@@ -50,7 +51,7 @@ int main(){
 	printf("%d\n", lstack_pop(stck));
 	free_lstack(stck);*/
 
-	//Implementation of queue using array
+	/*Implementation of queue using array
 	queue* q;
 	q = queue_create(5);
 	enqueue(q, 3);
@@ -68,6 +69,19 @@ int main(){
 	printf("%d\n", dequeue(q));
 	printf("%d\n", dequeue(q));
 	printf("%d\n", dequeue(q));
-	free_queue(q);
+	free_queue(q);*/
+
+	//Implementation of queue using linked list
+	lqueue* lq;
+	lq = lqueue_create(5);
+	enqueue_l(lq, 3);
+	enqueue_l(lq, 4);
+	enqueue_l(lq, 5);
+	enqueue_l(lq, 6);
+	enqueue_l(lq, 7);
+	enqueue_l(lq, 8);
+	printf("%d\n", dequeue_l(lq));
+	printf("%d\n", dequeue_l(lq));
+	free_lqueue(lq);
 	return 0;
 }

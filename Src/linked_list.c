@@ -34,9 +34,9 @@ void delete_ll(node** head, int8_t id){
 	int8_t i=0;
 	node *itr, *temp;
 	itr = *head;
-	if(id = 0){
+	if(id == 0){
 		*head = itr->next;
-		free(head);
+		free(itr);
 	}
 	else{
 		for(i=0; i<id-1; i++){
