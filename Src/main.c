@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "linked_list.h"
 #include "stack_arr.h"
-
+#include "stack_ll.h"
 int main(){
-	/*Implementation of Linked List
+	//Implementation of Linked List
 	printf("Implementation of linked list.......\r\n");
 	node* head;
 	head = create_ll();
@@ -19,9 +19,9 @@ int main(){
 	printf("Deleting value at index 3\r\n");
 	delete_ll(&head, 3);
 	print_ll(head);
-	free_ll(&head)*/
+	freeLL(&head);
 
-	/*Implementation of stack using arrays*/
+	/*Implementation of stack using arrays
 	printf("Implementation of stacks using arrays.....\r\n");
 	stack *stck;
 	stck = stack_init(100);
@@ -34,8 +34,19 @@ int main(){
 	stack_print(stck);
 	printf("Popping element from stack\r\n");
 	printf("%d\r\n", stack_pop(stck));
-	stack_print(stck);
-	
+	stack_print(stck);*/
+
+	/*Implementation of stack using linked list*/
+	printf("Implementation of stacks using linked list......\r\n");
+	stackL *stck;
+	stck = create_lstack(100);
+	lstack_push(stck, 5);
+	lstack_push(stck, 4);
+	lstack_push(stck, 3);
+	lstack_push(stck, 5);
+	lstack_print(stck);
+	printf("%d\n", lstack_pop(stck));
+	free_lstack(stck);
 
 	return 0;
 }

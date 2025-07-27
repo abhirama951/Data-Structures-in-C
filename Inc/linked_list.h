@@ -18,7 +18,7 @@ node* create_ll(void);
 void insert_ll(node** head, int8_t data, int8_t idx);
 void print_ll(node* head);
 void delete_ll(node** head, int8_t idx);
-void getValue_ll(node* head, int8_t idx);
+int8_t getValue_ll(node* head, int8_t idx);
 void freeLL(node** head);
  
 #endif

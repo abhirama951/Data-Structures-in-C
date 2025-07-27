@@ -23,7 +23,6 @@ void insert_ll(node** head, int8_t dat, int8_t id){
 }
 
 void print_ll(node* head){
-	printf("Linked List : ");
 	while(head){
 		printf("%d ", head->data);
 		head = head->next;
@@ -49,12 +48,12 @@ void delete_ll(node** head, int8_t id){
 	}
 }
 
-void getValue_ll(node* head, int8_t idx){
+int8_t getValue_ll(node* head, int8_t idx){
 	int8_t i=0;
 	for(i=0; i<idx; i++){
 		head = head->next;
 	}
-	printf("%d\n", head->data);
+	return (head->data);
 }
 
 void freeLL(node** head){
@@ -71,5 +70,6 @@ void freeLL(node** head){
 node* create_ll(void){
 	node* temp;
 	temp = (node*)(malloc(sizeof(node)));
+	temp = NULL;
 	return temp;
 }
