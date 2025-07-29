@@ -18,6 +18,7 @@ add_library(doublylinkedlist ${SRC_DIR}/doublelinked_list.c)
 add_library(stacklinkedlist ${SRC_DIR}/stack_ll.c)
 add_library(queuearray ${SRC_DIR}/queue_array.c)
 add_library(queuelist ${SRC_DIR}/queue_list.c)
+add_library(binsearchtree ${SRC_DIR}/bst.c)
 
 # Add the executable
 add_executable(main ${SRC_DIR}/main.c)
@@ -25,9 +26,10 @@ add_executable(main ${SRC_DIR}/main.c)
 # Make linkedlist a dependancy for stack_linkedlist
 target_link_libraries(stacklinkedlist PUBLIC linkedlist)
 target_link_libraries(queuelist PUBLIC linkedlist)
+target_link_libraries(binsearchtree PUBLIC stackarray)
 
 # Link the library to the executable
-target_link_libraries(main linkedlist stackarray doublylinkedlist stacklinkedlist queuearray queuelist) 
+target_link_libraries(main linkedlist stackarray doublylinkedlist stacklinkedlist queuearray queuelist binsearchtree) 
 
 # Tell CMake where to find headers
 target_include_directories(stackarray PUBLIC ${INC_DIR})
@@ -36,6 +38,7 @@ target_include_directories(doublylinkedlist PUBLIC ${INC_DIR})
 target_include_directories(stacklinkedlist PUBLIC ${INC_DIR})
 target_include_directories(queuearray PUBLIC ${INC_DIR})
 target_include_directories(queuelist PUBLIC ${INC_DIR})
+target_include_directories(binsearchtree PUBLIC ${INC_DIR})
 target_include_directories(main PUBLIC ${INC_DIR})
 
 

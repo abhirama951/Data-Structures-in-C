@@ -4,6 +4,7 @@
 #include "stack_ll.h"
 #include "queue_array.h"
 #include "queue_list.h"
+#include "bst.h"
 
 int main(){
 	/*Implementation of Linked List
@@ -71,7 +72,7 @@ int main(){
 	printf("%d\n", dequeue(q));
 	free_queue(q);*/
 
-	//Implementation of queue using linked list
+	/*Implementation of queue using linked list
 	lqueue* lq;
 	lq = lqueue_create(5);
 	enqueue_l(lq, 3);
@@ -82,6 +83,35 @@ int main(){
 	enqueue_l(lq, 8);
 	printf("%d\n", dequeue_l(lq));
 	printf("%d\n", dequeue_l(lq));
-	free_lqueue(lq);
+	free_lqueue(lq);*/
+
+	//Implementation of binary search tree
+	int8_t arr[] = {32, 23, 45, 67, 89, 90, 43, 56, 87, 66, 12, 78, 65};
+	root *rt, *temp1;
+	stack *stck1, *stck2, *stck3;
+	rt = createRoot();
+	stck1 = stack_init(100);
+	stck2 = stack_init(100);
+	stck3 = stack_init(100);
+
+
+	for(int8_t i=0; i<13; i++){
+		insertTree(rt, arr[i]);
+	}
+
+	temp1 = searchTree(rt, 89);
+	printf("Address of searched element = %X\r\n", temp1);
+
+	inorder(rt, stck1);
+	preorder(rt, stck2);
+	postorder(rt, stck3);
+
+	stack_print(stck1);
+	stack_print(stck2);
+	stack_print(stck3);
+
+	deleteTree(&rt, 56);
+
+	freeTree(rt); 
 	return 0;
 }
